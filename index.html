@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bijju Adithi Yadav | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0b1220;
+      color: #e5e7eb;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    header {
+      padding: 20px 60px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .logo span {
+      color: #22d3ee;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #22d3ee;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero .hello {
+      color: #22d3ee;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+    .hero h1 {
+      font-size: 56px;
+      margin: 10px 0;
+    }
+    .hero h1 span {
+      color: #22d3ee;
+    }
+    .subtitle {
+      color: #9ca3af;
+      margin: 20px 0 35px;
+    }
+    .buttons a {
+      padding: 12px 30px;
+      border-radius: 30px;
+      margin: 0 8px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .btn-primary {
+      background: #22d3ee;
+      color: #0b1220;
+    }
+    .btn-secondary {
+      border: 1px solid #22d3ee;
+      color: #22d3ee;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 60px;
+    }
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    section h2 span {
+      color: #22d3ee;
+    }
+    .section-desc {
+      color: #9ca3af;
+      margin-bottom: 40px;
+      max-width: 800px;
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #111827;
+      padding: 25px;
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border: 1px solid #22d3ee;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #9ca3af;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .tags span {
+      background: #1f2937;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-right: 6px;
+    }
+
+    /* About */
+    .about-text {
+      max-width: 850px;
+      margin-bottom: 30px;
+      color: #9ca3af;
+    }
+    .info-box {
+      background: #111827;
+      padding: 22px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT (UPDATED) */
+    .contact-box {
+      max-width: 500px;
+      margin-top: 30px;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: #111827;
+      border: 1px solid #1f2937;
+      padding: 12px;
+      border-radius: 8px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      background: #22d3ee;
+      color: #0b1220;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      background: #111827;
+      border-left: 4px solid #22d3ee;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 768px) {
+      header, section {
+        padding: 40px 20px;
+      }
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">bijju<span>adithi</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="hero">
+  <p class="hello">HELLO, I AM</p>
+  <h1>BIJJU ADITHI <span>YADAV</span></h1>
+  <p class="subtitle">
+    Aspiring Software Engineer & B.Tech CSE Student<br>
+    Creating digital experiences with code and creativity.
+  </p>
+  <div class="buttons">
+    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="#contact" class="btn-secondary">Contact Me</a>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>My <span>Projects</span></h2>
+  <p class="section-desc">
+    A collection of my work in Software Engineering, AI/ML, and Web Development.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Interactive Map Services</h3>
+      <p>Frontend app using maps & real-time location data.</p>
+      <div class="tags"><span>React</span><span>Maps API</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Patient Care Platform</h3>
+      <p>DBMS-based healthcare management system.</p>
+      <div class="tags"><span>Java</span><span>SQL</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Object Video Detection</h3>
+      <p>Real-time object detection using deep learning.</p>
+      <div class="tags"><span>Python</span><span>OpenCV</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Sign Language AI</h3>
+      <p>AI model translating sign language to text.</p>
+      <div class="tags"><span>TensorFlow</span><span>AI</span></div>
+    </div>
+
+    <div class="card">
+      <h3>House Price Analytics</h3>
+      <p>Data visualization & predictive analysis dashboard.</p>
+      <div class="tags"><span>Pandas</span><span>Analytics</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About <span>Me</span></h2>
+  <p class="about-text">
+    Hello! I'm <b>Bijju Adithi Yadav</b>, an aspiring Software Engineer and
+    B.Tech Computer Science student at Koneru Lakshmaiah Deemed to be University.
+    I love building scalable software and exploring AI/ML technologies.
+  </p>
+
+  <div class="info-box">
+    <h3>Education</h3>
+    <p>B.Tech CSE • KL University<br>CGPA: 9.68 • Hyderabad</p>
+  </div>
+
+  <div class="info-box">
+    <h3>Certifications</h3>
+    <ul>
+      <li>NPTEL C Programming</li>
+      <li>Coursera Git</li>
+      <li>Udemy Web Development</li>
+      <li>Infosys ReactJS</li>
+      <li>Google AI-ML Internship</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT (UPDATED) -->
+<section id="contact">
+  <h2>Let’s <span>Talk</span></h2>
+  <p class="section-desc">Have a project in mind or want to collaborate?</p>
+
+  <div class="contact-box">
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+      <button type="submit">Send Message ✈️</button>
+
+      <div class="success-message" id="successMessage">
+        <strong>Message Sent!</strong><br>
+        Thank you for reaching out. I’ll get back to you soon.
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Bijju Adithi Yadav • All rights reserved
+</footer>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const successMessage = document.getElementById("successMessage");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill all fields before submitting.");
+      return;
+    }
+
+    successMessage.style.display = "block";
+    form.reset();
+  });
+
+  console.log("bijjuadithi portfolio loaded");
+</script>
+
+</body>
+</html>
