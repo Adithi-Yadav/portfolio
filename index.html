@@ -2,206 +2,438 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bijju Adithi Yadav | Portfolio</title>
+  <title>Bijju Adithi Yadav | Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+        /* Remove underline and default font from hero contact links */
+        .subtitle a {
+          color: #64c8ff;
+          text-decoration: none;
+          font-family: inherit;
+          font-size: inherit;
+          font-weight: 500;
+          transition: color 0.2s;
+        }
+        .subtitle a:hover {
+          color: #7c3aed;
+          text-decoration: underline;
+        }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: #0b1220;
-      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+      color: #e0e6ff;
       scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
     /* Navbar */
     header {
       padding: 20px 60px;
+      position: sticky;
+      top: 0;
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(100, 200, 255, 0.1);
     }
+
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
     }
+
     .logo {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .logo span {
-      color: #22d3ee;
-    }
+
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 30px;
     }
+
     .nav-links a {
       text-decoration: none;
-      color: #9ca3af;
+      color: #a0aec0;
       font-weight: 500;
+      font-size: 15px;
+      transition: 0.3s;
+      position: relative;
     }
+
     .nav-links a:hover {
-      color: #22d3ee;
+      color: #64c8ff;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #64c8ff;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     /* Hero */
     .hero {
       text-align: center;
-      padding: 100px 20px;
+      padding: 120px 20px 80px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
+
     .hero .hello {
-      color: #22d3ee;
-      letter-spacing: 2px;
-      font-size: 14px;
+      color: #64c8ff;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 15px;
     }
+
     .hero h1 {
-      font-size: 56px;
-      margin: 10px 0;
+      font-size: 64px;
+      margin: 15px 0;
+      font-weight: 700;
+      line-height: 1.1;
     }
+
     .hero h1 span {
-      color: #22d3ee;
+      background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
+
     .subtitle {
-      color: #9ca3af;
-      margin: 20px 0 35px;
+      color: #a0aec0;
+      margin: 25px 0 40px;
+      font-size: 18px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     .buttons a {
-      padding: 12px 30px;
-      border-radius: 30px;
-      margin: 0 8px;
+      padding: 14px 35px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 15px;
+      transition: 0.3s;
+      display: inline-block;
     }
+
     .btn-primary {
-      background: #22d3ee;
-      color: #0b1220;
+      background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
+      color: #0a0e27;
+      box-shadow: 0 8px 32px rgba(100, 200, 255, 0.3);
     }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(100, 200, 255, 0.4);
+    }
+
     .btn-secondary {
-      border: 1px solid #22d3ee;
-      color: #22d3ee;
+      border: 2px solid #64c8ff;
+      color: #64c8ff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(100, 200, 255, 0.1);
+      transform: translateY(-3px);
     }
 
     /* Sections */
     section {
-      padding: 80px 60px;
-    }
-    section h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    section h2 span {
-      color: #22d3ee;
-    }
-    .section-desc {
-      color: #9ca3af;
-      margin-bottom: 40px;
-      max-width: 800px;
+      padding: 100px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    /* Cards */
+    section h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    section h2 span {
+      background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-desc {
+      color: #a0aec0;
+      margin-bottom: 50px;
+      max-width: 800px;
+      font-size: 16px;
+    }
+
+    /* Project Cards */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
     }
+
     .card {
-      background: #111827;
-      padding: 25px;
-      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(100, 200, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+      padding: 35px;
+      border-radius: 12px;
+      transition: 0.3s;
+      border: 1px solid rgba(100, 200, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #64c8ff 0%, #7c3aed 100%);
+      transform: scaleX(0);
       transition: 0.3s;
     }
+
     .card:hover {
-      transform: translateY(-6px);
-      border: 1px solid #22d3ee;
+      transform: translateY(-8px);
+      border: 1px solid rgba(100, 200, 255, 0.3);
+      box-shadow: 0 20px 50px rgba(100, 200, 255, 0.15);
     }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-icon {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-icon svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 4px 12px rgba(100, 200, 255, 0.2));
+    }
+
     .card h3 {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #e0e6ff;
     }
+
     .card p {
-      color: #9ca3af;
-      font-size: 14px;
-      margin-bottom: 15px;
+      color: #a0aec0;
+      font-size: 15px;
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     .tags span {
-      background: #1f2937;
+      background: rgba(100, 200, 255, 0.1);
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 12px;
-      margin-right: 6px;
+      color: #64c8ff;
+      border: 1px solid rgba(100, 200, 255, 0.2);
+      font-weight: 500;
     }
 
-    /* About */
+    /* About Section */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
     .about-text {
-      max-width: 850px;
+      color: #a0aec0;
+      font-size: 16px;
       margin-bottom: 30px;
-      color: #9ca3af;
-    }
-    .info-box {
-      background: #111827;
-      padding: 22px;
-      border-radius: 14px;
-      margin-bottom: 20px;
+      line-height: 1.8;
     }
 
-    /* CONTACT (UPDATED) */
+    .info-box {
+      background: linear-gradient(135deg, rgba(100, 200, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(100, 200, 255, 0.1);
+    }
+
+    .info-box h3 {
+      color: #64c8ff;
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .info-box p, .info-box li {
+      color: #a0aec0;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .info-box ul {
+      margin-left: 20px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .skill-item {
+      background: rgba(100, 200, 255, 0.05);
+      padding: 12px 15px;
+      border-radius: 8px;
+      border-left: 3px solid #64c8ff;
+    }
+
+    .skill-item strong {
+      color: #64c8ff;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .skill-item span {
+      color: #a0aec0;
+      font-size: 13px;
+    }
+
+    /* Contact Section */
     .contact-box {
-      max-width: 500px;
+      max-width: 600px;
       margin-top: 30px;
     }
 
     input, textarea {
       width: 100%;
-      background: #111827;
-      border: 1px solid #1f2937;
-      padding: 12px;
+      background: rgba(100, 200, 255, 0.05);
+      border: 1px solid rgba(100, 200, 255, 0.2);
+      padding: 14px;
       border-radius: 8px;
-      color: #fff;
-      margin-bottom: 12px;
+      color: #e0e6ff;
+      margin-bottom: 15px;
       font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #64c8ff;
+      background: rgba(100, 200, 255, 0.1);
+      box-shadow: 0 0 20px rgba(100, 200, 255, 0.1);
     }
 
     button {
       width: 100%;
-      background: #22d3ee;
-      color: #0b1220;
+      background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
+      color: #0a0e27;
       border: none;
       padding: 14px;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 600;
+      font-size: 15px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(100, 200, 255, 0.3);
     }
 
     .success-message {
       display: none;
       margin-top: 15px;
-      padding: 12px;
-      background: #111827;
-      border-left: 4px solid #22d3ee;
+      padding: 15px;
+      background: rgba(100, 200, 255, 0.1);
+      border-left: 4px solid #64c8ff;
       border-radius: 8px;
       font-size: 14px;
-      color: #9ca3af;
+      color: #64c8ff;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       color: #6b7280;
+      border-top: 1px solid rgba(100, 200, 255, 0.1);
     }
 
     @media (max-width: 768px) {
       header, section {
         padding: 40px 20px;
       }
+
       .hero h1 {
-        font-size: 38px;
+        font-size: 42px;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      section h2 {
+        font-size: 32px;
       }
     }
   </style>
@@ -211,7 +443,7 @@
 
 <header>
   <nav class="navbar">
-    <div class="logo">bijju<span>adithi</span></div>
+    <div class="logo">&lt;/bijjuadithiyadav&gt;</div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -221,108 +453,119 @@
   </nav>
 </header>
 
-<!-- HOME -->
+<!-- HOME SECTION -->
 <section id="home" class="hero">
-  <p class="hello">HELLO, I AM</p>
-  <h1>BIJJU ADITHI <span>YADAV</span></h1>
+  <p class="hello">$ BIJJU ADITHI YADAV</p>
+  <h1>B. Tech CSE Student | <span>Aspiring Software Engineer</span></h1>
   <p class="subtitle">
-    Aspiring Software Engineer & B.Tech CSE Student<br>
-    Creating digital experiences with code and creativity.
+    <strong>Email:</strong> <a href="mailto:bijjuadithiyadav@gmail.com" style="color:#64c8ff;">bijjuadithiyadav@gmail.com</a><br>
+    <strong>Mobile:</strong> <a href="tel:+919392389805" style="color:#64c8ff;">+91 9392389805</a><br>
+    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adithi-yadav-bijju-637262369/" target="_blank" style="color:#64c8ff;">adithi-yadav-bijju</a><br>
+    <strong>GitHub:</strong> <a href="https://github.com/Adithi-Yadav" target="_blank" style="color:#64c8ff;">Adithi-Yadav</a>
   </p>
   <div class="buttons">
-    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="#about" class="btn-primary">About Me</a>
     <a href="#contact" class="btn-secondary">Contact Me</a>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS SECTION -->
 <section id="projects">
   <h2>My <span>Projects</span></h2>
   <p class="section-desc">
-    A collection of my work in Software Engineering, AI/ML, and Web Development.
+    Here are some of the projects I have worked on as part of my academic and personal learning journey:
   </p>
-
   <div class="card-grid">
     <div class="card">
-      <h3>Interactive Map Services</h3>
-      <p>Frontend app using maps & real-time location data.</p>
-      <div class="tags"><span>React</span><span>Maps API</span></div>
+      <h3>Interactive Map-For-Local-Services (Frontend Development)</h3>
     </div>
-
     <div class="card">
-      <h3>Patient Care Platform</h3>
-      <p>DBMS-based healthcare management system.</p>
-      <div class="tags"><span>Java</span><span>SQL</span></div>
+      <h3>Integrated Patient Care Management Platform - DBMS</h3>
     </div>
-
     <div class="card">
-      <h3>Object Video Detection</h3>
-      <p>Real-time object detection using deep learning.</p>
-      <div class="tags"><span>Python</span><span>OpenCV</span></div>
+      <h3>Biometric Data Privacy Vault - OOP</h3>
     </div>
-
     <div class="card">
-      <h3>Sign Language AI</h3>
-      <p>AI model translating sign language to text.</p>
-      <div class="tags"><span>TensorFlow</span><span>AI</span></div>
+      <h3>AI/ML – Sign Language Detection</h3>
     </div>
-
     <div class="card">
-      <h3>House Price Analytics</h3>
-      <p>Data visualization & predictive analysis dashboard.</p>
-      <div class="tags"><span>Pandas</span><span>Analytics</span></div>
+      <h3>Data Analytics & Visualization – House price Analysis</h3>
+    </div>
+    <div class="card">
+      <h3>Real Time Object Video Detection for Smart Security Surveillance</h3>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT SECTION -->
 <section id="about">
   <h2>About <span>Me</span></h2>
-  <p class="about-text">
-    Hello! I'm <b>Bijju Adithi Yadav</b>, an aspiring Software Engineer and
-    B.Tech Computer Science student at Koneru Lakshmaiah Deemed to be University.
-    I love building scalable software and exploring AI/ML technologies.
-  </p>
-
-  <div class="info-box">
-    <h3>Education</h3>
-    <p>B.Tech CSE • KL University<br>CGPA: 9.68 • Hyderabad</p>
-  </div>
-
-  <div class="info-box">
-    <h3>Certifications</h3>
-    <ul>
-      <li>NPTEL C Programming</li>
-      <li>Coursera Git</li>
-      <li>Udemy Web Development</li>
-      <li>Infosys ReactJS</li>
-      <li>Google AI-ML Internship</li>
-    </ul>
+  <div class="about-container">
+    <div>
+      <div class="info-box">
+        <h3>Objective</h3>
+        <p>Motivated B.Tech CSE student with strong fundamentals in programming and web development, seeking opportunities to apply technical skills, learn industry practices, and contribute to real-world software projects.</p>
+      </div>
+      <div class="info-box">
+        <h3>Education</h3>
+        <ul>
+          <li><strong>B. Tech - Computer Science Engineering</strong><br>Koneru Lakshmaiah Deemed to be University, Hyderabad<br>2024-2028 | Current CGPA: 9.68</li>
+          <li><strong>Class 12</strong> - Sri Vasista College<br>Grade: 88%</li>
+          <li><strong>Class 10 (CBSE)</strong> – Bharatiya Vidya Bhavans Public School<br>Grade: 70%</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="info-box">
+        <h3>Skills</h3>
+        <ul>
+          <li><strong>Programming:</strong> C, Java</li>
+          <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript</li>
+          <li><strong>Databases:</strong> SQL</li>
+          <li><strong>Tools:</strong> Git, GitHub</li>
+          <li><strong>Concepts:</strong> DBMS, OOPS, Basics of AI/ML</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>Certificates and Virtual Internships</h3>
+        <ul>
+          <li>Problem Solving Through Programming in C – NPTEL (2025)</li>
+          <li>Modern HTML, CSS and JavaScript – Udemy</li>
+          <li>Introduction to Git and GitHub – Coursera</li>
+          <li>React JS – Infosys Springboard</li>
+          <li>Python Course for Beginners – Scaler</li>
+          <li>Java Course – Scaler</li>
+          <li>RedHat OPENSOURCEX-2025 Hackathon</li>
+          <li>Google AI-ML Virtual Internship – EduSkills</li>
+          <li>Java Full Stack Developer – EduSkills</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT (UPDATED) -->
+<!-- CONTACT SECTION -->
 <section id="contact">
-  <h2>Let’s <span>Talk</span></h2>
-  <p class="section-desc">Have a project in mind or want to collaborate?</p>
+  <h2>Let's <span>Connect</span></h2>
+  <p class="section-desc">Have a project idea or want to coaborate? I'd love to hear from you!</p>
 
   <div class="contact-box">
     <form id="contactForm">
-      <input type="text" id="name" placeholder="Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
-      <button type="submit">Send Message ✈️</button>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
+      <button type="submit">Send Message 🚀</button>
 
       <div class="success-message" id="successMessage">
-        <strong>Message Sent!</strong><br>
-        Thank you for reaching out. I’ll get back to you soon.
+        <strong>Message Sent Successfully!</strong><br>
+        Thank you for reaching out. I'll get back to you as soon as possible.
       </div>
     </form>
   </div>
 </section>
 
 <footer>
-  © 2026 Bijju Adithi Yadav • All rights reserved
+  © 2026 Bijju Adithi Yadav | B. Tech CSE Student | Aspiring Software Engineer
 </footer>
 
 <script>
@@ -343,9 +586,13 @@
 
     successMessage.style.display = "block";
     form.reset();
+
+    setTimeout(() => {
+      successMessage.style.display = "none";
+    }, 5000);
   });
 
-  console.log("bijjuadithi portfolio loaded");
+  console.log("Ram Charan's CS Portfolio Loaded ✓");
 </script>
 
 </body>
