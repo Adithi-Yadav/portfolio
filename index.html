@@ -352,59 +352,104 @@
       font-size: 13px;
     }
 
-    /* Contact Section */
+    /* Tech Stack Carousel Styles */
     .contact-box {
-      max-width: 600px;
-      margin-top: 30px;
+      max-width: 320px;
+      margin: 30px auto 0 auto;
     }
-
-    input, textarea {
+    .tech-carousel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(100,200,255,0.04);
+      border-radius: 10px;
+      border: 1px solid rgba(100,200,255,0.08);
+      box-shadow: 0 2px 16px rgba(100,200,255,0.05);
+      padding: 18px 0 18px 0;
       width: 100%;
-      background: rgba(100, 200, 255, 0.05);
-      border: 1px solid rgba(100, 200, 255, 0.2);
-      padding: 14px;
-      border-radius: 8px;
-      color: #e0e6ff;
-      margin-bottom: 15px;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      transition: 0.3s;
+      max-width: 320px;
     }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #64c8ff;
-      background: rgba(100, 200, 255, 0.1);
-      box-shadow: 0 0 20px rgba(100, 200, 255, 0.1);
-    }
-
-    button {
-      width: 100%;
+    .carousel-btn {
       background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
       color: #0a0e27;
       border: none;
-      padding: 14px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 15px;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0 0 8px 0;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(100,200,255,0.08);
+      outline: none;
+      z-index: 2;
     }
-
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(100, 200, 255, 0.3);
+    .carousel-btn:active {
+      background: #7c3aed;
+      color: #fff;
+      transform: scale(1.08);
     }
-
-    .success-message {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      background: rgba(100, 200, 255, 0.1);
-      border-left: 4px solid #64c8ff;
+    .tech-carousel {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+    }
+    .tech-carousel li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 8px;
       border-radius: 8px;
-      font-size: 14px;
-      color: #64c8ff;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
+      color: #0a0e27;
+      box-shadow: 0 2px 8px rgba(100,200,255,0.08);
+      border: none;
+      white-space: nowrap;
+      transition: all 0.3s cubic-bezier(.4,2,.6,1);
+      font-size: 18px;
+      opacity: 0.5;
+      transform: scale(0.85);
+      z-index: 1;
+      min-height: 38px;
+      padding: 8px 0;
+    }
+    .tech-carousel li.center {
+      font-size: 30px;
+      opacity: 1;
+      background: linear-gradient(135deg, #7c3aed 0%, #64c8ff 100%);
+      color: #fff;
+      transform: scale(1.18);
+      z-index: 2;
+      min-height: 54px;
+      box-shadow: 0 4px 24px #64c8ff44;
+    }
+    .tech-carousel li.above, .tech-carousel li.below {
+      opacity: 0.8;
+      font-size: 22px;
+      transform: scale(1.02);
+      background: linear-gradient(135deg, #64c8ff 0%, #7c3aed 100%);
+      color: #0a0e27;
+      z-index: 1;
+      min-height: 44px;
+    }
+    .tech-carousel li.far {
+      opacity: 0.3;
+      font-size: 15px;
+      transform: scale(0.8);
+      min-height: 30px;
     }
 
     footer {
@@ -546,21 +591,14 @@
 
 <!-- CONTACT SECTION -->
 <section id="contact">
-  <h2>Let's <span>Connect</span></h2>
-  <p class="section-desc">Have a project idea or want to coaborate? I'd love to hear from you!</p>
-
+  <h2>My <span>Tech Stack</span></h2>
+  <p class="section-desc">Scroll through the technologies and tools I use most often. Use the arrows to explore!</p>
   <div class="contact-box">
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
-      <button type="submit">Send Message 🚀</button>
-
-      <div class="success-message" id="successMessage">
-        <strong>Message Sent Successfully!</strong><br>
-        Thank you for reaching out. I'll get back to you as soon as possible.
-      </div>
-    </form>
+    <div class="tech-carousel-container">
+      <button class="carousel-btn" id="scrollUp" aria-label="Scroll up">▲</button>
+      <ul class="tech-carousel" id="techCarousel"></ul>
+      <button class="carousel-btn" id="scrollDown" aria-label="Scroll down">▼</button>
+    </div>
   </div>
 </section>
 
@@ -569,30 +607,45 @@
 </footer>
 
 <script>
-  const form = document.getElementById("contactForm");
-  const successMessage = document.getElementById("successMessage");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (name === "" || email === "" || message === "") {
-      alert("Please fill all fields before submitting.");
-      return;
+  // Tech Stack Vertical Carousel
+  const techs = [
+    "C", "Java", "HTML5", "CSS3", "JavaScript", "SQL", "Git", "GitHub", "DBMS", "OOPS", "AI/ML Basics", "React JS", "Python", "Springboard", "Coursera", "Udemy", "Scaler", "EduSkills", "RedHat", "NPTEL"
+  ];
+  const techCarousel = document.getElementById('techCarousel');
+  let centerIdx = 0;
+  function renderCarousel() {
+    techCarousel.innerHTML = '';
+    for (let i = -2; i <= 2; i++) {
+      let idx = (centerIdx + i + techs.length) % techs.length;
+      let li = document.createElement('li');
+      li.textContent = techs[idx];
+      if (i === 0) li.className = 'center';
+      else if (i === -1) li.className = 'above';
+      else if (i === 1) li.className = 'below';
+      else li.className = 'far';
+      techCarousel.appendChild(li);
     }
-
-    successMessage.style.display = "block";
-    form.reset();
-
-    setTimeout(() => {
-      successMessage.style.display = "none";
-    }, 5000);
+  }
+  renderCarousel();
+  document.getElementById('scrollUp').onclick = function() {
+    centerIdx = (centerIdx - 1 + techs.length) % techs.length;
+    renderCarousel();
+  };
+  document.getElementById('scrollDown').onclick = function() {
+    centerIdx = (centerIdx + 1) % techs.length;
+    renderCarousel();
+  };
+  // Optional: scroll with mouse wheel
+  techCarousel.addEventListener('wheel', function(e) {
+    if (e.deltaY > 0) {
+      centerIdx = (centerIdx + 1) % techs.length;
+    } else {
+      centerIdx = (centerIdx - 1 + techs.length) % techs.length;
+    }
+    renderCarousel();
+    e.preventDefault();
   });
-
-  console.log("Ram Charan's CS Portfolio Loaded ✓");
+  console.log("Bijju Adithi Yadav Resume Loaded ✓");
 </script>
 
 </body>
